@@ -26,6 +26,7 @@ const router = createBrowserRouter([
         path: '/admin',
         element: <h1>Admin</h1>,
     },
+    
 ])
 
 export default router
