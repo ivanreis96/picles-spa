@@ -10,3 +10,4 @@ export async function getPetById(id: string): Promise<IPet> {
         throw error 
     }
 }
+
