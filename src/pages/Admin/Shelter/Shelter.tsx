@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Button } from "../../../components/common/Button";
+import { Button, ButtonVariant } from "../../../components/common/Button";
 import { Input } from "../../../components/common/Input";
 import { Panel } from "../../../components/layout/Panel";
 import styles from './Shelter.module.css'
@@ -79,7 +79,7 @@ export function Shelter() {
     return (
         <Panel>            
             {
-                isLoading && <Skeleton count={4} width={320} height={32} />
+                isLoading && <Skeleton count={4} width={320} height={32} style={{ gap: '' }}/>
 
             }
             
@@ -110,7 +110,9 @@ export function Shelter() {
                             formState.errors?.whatsApp && (<p className={styles.formError}>{formState.errors.whatsApp.message}</p>
                         )}
                     </div>
-                    <Button type="submit">Salvar dados</Button>
+                    <Button type="submit" variant={
+                        !formState.isDirty || formState.isSubmitting ? ButtonVariant.Disabled : ButtonVariant.Default
+                    }>Salvar dados</Button>
                 </form>
             )}
         </Panel>
